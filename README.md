@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="favicon.png" width="72" height="72" alt="Salesimpact">
+  <img src="logo.png" width="360" alt="Salesimpact">
 </p>
 
 <h1 align="center">Salesimpact Data</h1>
