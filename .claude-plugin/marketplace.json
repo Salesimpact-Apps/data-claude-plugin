@@ -1,0 +1,18 @@
+{
+  "name": "salesimpact",
+  "owner": {
+    "name": "Salesimpact",
+    "url": "https://salesimpact.com"
+  },
+  "metadata": {
+    "description": "Marketplace privado da Salesimpact — plugin de dados para geração de negócios."
+  },
+  "plugins": [
+    {
+      "name": "salesimpact",
+      "source": "./plugin",
+      "description": "Busca empresas e contatos, enriquece listas de CNPJ e gera estudos de mercado com créditos Salesimpact.",
+      "defaultEnabled": false
+    }
+  ]
+}

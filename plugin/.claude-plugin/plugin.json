@@ -1,0 +1,21 @@
+{
+  "name": "salesimpact",
+  "displayName": "Salesimpact Data",
+  "version": "1.0.0",
+  "description": "Busca empresas e contatos, enriquece listas de CNPJ e gera estudos de mercado com créditos Salesimpact.",
+  "author": {
+    "name": "Salesimpact"
+  },
+  "homepage": "https://salesimpact.com",
+  "repository": "https://github.com/Salesimpact-Apps/data-claude-plugin",
+  "keywords": ["sales", "enrichment", "cnpj", "market-research", "leads"],
+  "defaultEnabled": false,
+  "userConfig": {
+    "mcp_url": {
+      "type": "string",
+      "title": "URL do MCP Salesimpact",
+      "description": "URL HTTPS do MCP que a Salesimpact fornecer, por exemplo https://seu-ambiente.exemplo/mcp",
+      "required": true
+    }
+  }
+}
