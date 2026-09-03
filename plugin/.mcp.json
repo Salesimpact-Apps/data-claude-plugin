@@ -2,7 +2,7 @@
   "mcpServers": {
     "salesimpact": {
       "type": "http",
-      "url": "${user_config.mcp_url}"
+      "url": "https://data-plugin.salesimpact.com.br/mcp"
     }
   }
 }

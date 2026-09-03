@@ -4,7 +4,7 @@
 
 <h1 align="center">Salesimpact Data</h1>
 
-<p align="center">Plugin privado da Salesimpact para o Claude Code.</p>
+<p align="center">Plugin privado da Salesimpact para o Claude (web, Cowork e Code).</p>
 
 Este repositório é o **marketplace público** do plugin. O produto em si é **privado**: só clientes e times autorizados, com conta e créditos Salesimpact, devem habilitá-lo.
 
@@ -12,7 +12,7 @@ Não é um plugin comunitário. Não envie chaves, tokens nem URLs de fontes de 
 
 ## O que o plugin faz
 
-Com a URL do MCP Salesimpact, o Claude passa a:
+O plugin já aponta o MCP para `https://data-plugin.salesimpact.com.br/mcp`. Depois do login Salesimpact, o Claude passa a:
 
 - buscar empresas brasileiras (CNPJ, domínio, razão social, LinkedIn)
 - encontrar contatos (e-mail, telefone, discovery)
@@ -29,7 +29,7 @@ As fontes de dados ficam no servidor. O Claude só vê a marca Salesimpact, o sa
 /plugin install salesimpact@salesimpact
 ```
 
-O plugin nasce **desabilitado**. Ao ligar, informe a `mcp_url` que a Salesimpact enviar (HTTPS do gateway). Sem essa URL o plugin não consulta nada.
+O plugin nasce **desabilitado**. Ao ligar, o conector já usa a URL do MCP. Faça o login na tela da Salesimpact — a senha não passa pelo Claude.
 
 Validação local, se você tiver o CLI:
 
@@ -39,11 +39,15 @@ claude plugin validate ./plugin
 
 ## Claude.ai e Cowork
 
-Skills desta pasta valem no Claude Code. No web e no Cowork, use o conector com a mesma URL HTTPS do MCP. O login abre a tela da Salesimpact — a senha não passa pelo Claude.
+1. Customize → Plugins → **+** → Add marketplace → repositório `Salesimpact-Apps/data-claude-plugin`
+2. Browse plugins → Install em **Salesimpact Data**
+3. Ligue o plugin. O conector já vem com a URL do MCP. Autorize na tela da Salesimpact.
+
+Não cole `${user_config.mcp_url}` e não adicione um conector avulso. O MCP é componente do plugin.
 
 ## Atualizações
 
-A versão está em `plugin/.claude-plugin/plugin.json` (`1.0.0`). O Claude usa essa string como chave de cache.
+A versão está em `plugin/.claude-plugin/plugin.json` (`1.0.1`). O Claude usa essa string como chave de cache.
 
 1. A Salesimpact publica um commit e **incrementa** `version`.
 2. No Claude Code: `/plugin marketplace update` e depois `/plugin update`.
@@ -72,7 +76,7 @@ Agents: `market-analyst` e `lead-enricher`.
 
 ## O que este repositório não contém
 
-Só a camada que o Claude instala: manifesto, skills, agents e a URL do MCP via `userConfig`.
+Só a camada que o Claude instala: manifesto, skills, agents e o MCP com a URL pública do gateway.
 
 Não há código do gateway, banco, deploy nem credenciais. Não peça e não cole API keys de terceiros.
 
