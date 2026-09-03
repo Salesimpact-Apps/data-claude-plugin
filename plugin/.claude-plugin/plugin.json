@@ -1,8 +1,8 @@
 {
   "name": "salesimpact",
   "displayName": "Salesimpact Data",
-  "version": "1.0.1",
-  "description": "Busca empresas e contatos, enriquece listas de CNPJ e gera estudos de mercado com créditos Salesimpact.",
+  "version": "1.1.0",
+  "description": "Consultas analíticas SQL, estudos de mercado, busca de empresas e enriquecimento de CNPJ com créditos Salesimpact.",
   "author": {
     "name": "Salesimpact"
   },
