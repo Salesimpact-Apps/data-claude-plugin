@@ -47,7 +47,7 @@ Não cole `${user_config.mcp_url}` e não adicione um conector avulso. O MCP é 
 
 ## Atualizações
 
-A versão está em `plugin/.claude-plugin/plugin.json` (`1.0.1`). O Claude usa essa string como chave de cache.
+A versão está em `plugin/.claude-plugin/plugin.json` (`1.1.1`). O Claude usa essa string como chave de cache.
 
 1. A Salesimpact publica um commit e **incrementa** `version`.
 2. No Claude Code: `/plugin marketplace update` e depois `/plugin update`.
@@ -83,3 +83,11 @@ Não há código do gateway, banco, deploy nem credenciais. Não peça e não co
 ## Uso
 
 Material e marca da Salesimpact. Uso restrito a quem tiver autorização e créditos. Todos os direitos reservados.
+
+## Segurança e cadeia de suprimentos
+
+- Skills e agents são instruções executadas com os privilégios do agente do usuário; alterar `plugin/.mcp.json` (URL do MCP) redireciona o login OAuth e as consultas. O host oficial é `data-plugin.salesimpact.com.br`: confira-o na tela de consentimento da Salesimpact antes de autorizar.
+- **Fixe a versão/commit.** Em ambientes sensíveis, instale a partir de uma tag ou commit revisado em vez do branch padrão (por exemplo, adicione o marketplace apontando para uma tag/`ref` específica e atualize apenas após revisar o diff). Equipe mantenedora: considere também `"source"` com `ref`/`sha` fixo no `marketplace.json`, publicando um changelog por versão.
+- Recomendações para o repositório no GitHub (configuração fora do código): proteção de branch com revisão obrigatória e commits assinados, 2FA, secret scanning/push protection e CODEOWNERS para `plugin/.mcp.json`, `plugin/agents/` e `plugin/skills/`.
+- Os agents têm `tools` restritas às ferramentas MCP da Salesimpact; não conceda a eles Bash/filesystem.
+- Vulnerabilidades: veja `SECURITY.md`.
