@@ -4,3 +4,9 @@ desktop.ini
 *.swp
 .idea/
 .vscode/
+
+# Segredos (preventivo)
+.env
+.env.*
+*.pem
+*.key
