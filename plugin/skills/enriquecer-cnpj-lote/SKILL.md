@@ -5,7 +5,7 @@ description: Enriquece listas de CNPJ (planilha, CSV ou colar). Até 10 mil por 
 
 Nunca chame `lookup_company` em loop.
 
-1. Extraia a coluna de CNPJ (máscara irrelevante).
+1. Extraia a coluna de CNPJ (máscara irrelevante). Se o usuário enviou um arquivo, leia-o com `Read` (somente leitura); não leia outros arquivos.
 2. `get_credit_balance` e avise se o pior caso (1 crédito por CNPJ) não couber.
 3. Envie a lista **inteira** em `submit_cnpj_enrichment`. Quem fatia em 10.000 é o gateway:
    - 1–10.000 → 1 lote
