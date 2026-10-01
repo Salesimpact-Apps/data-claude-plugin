@@ -91,3 +91,4 @@ Material e marca da Salesimpact. Uso restrito a quem tiver autorização e créd
 - Recomendações para o repositório no GitHub (configuração fora do código): proteção de branch com revisão obrigatória e commits assinados, 2FA, secret scanning/push protection e CODEOWNERS para `plugin/.mcp.json`, `plugin/agents/` e `plugin/skills/`.
 - Os agents têm `tools` restritas às ferramentas MCP da Salesimpact; não conceda a eles Bash/filesystem.
 - Vulnerabilidades: veja `SECURITY.md`.
+- Modelo de segurança, deploy, validações e pendências conhecidas: veja [`docs/SEGURANCA.md`](docs/SEGURANCA.md).
